@@ -40,17 +40,14 @@ body {
 
 .sidebar-header {
     padding: 2rem 1.5rem;
-    border-bottom: 2px solid rgba(245, 158, 11, 0.25);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 .logo {
-    font-size: 1.2rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--primary-color), #7bc3ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin: 0;
+    max-width: 60px;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
 }
 
 .sidebar-nav {
@@ -65,7 +62,7 @@ body {
     margin: 0;
 }
 
-.sidebar-nav a {
+.sidebar-nav > ul > li > a {
     display: block;
     padding: 0.7rem 1.2rem;
     color: rgba(255, 255, 255, 0.85);
@@ -76,12 +73,54 @@ body {
     font-size: 0.95rem;
 }
 
-.sidebar-nav a:hover,
-.sidebar-nav a.active {
+.sidebar-nav > ul > li > a:hover,
+.sidebar-nav > ul > li > a.active {
     background: rgba(245, 158, 11, 0.1);
     color: var(--primary-color);
     border-left-color: var(--primary-color);
     padding-left: 1.8rem;
+}
+
+/* Services Submenu */
+.sidebar-nav li.has-submenu > a::after {
+    content: ' ▼';
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-nav li.has-submenu > a.submenu-open::after {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .submenu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.sidebar-nav li.has-submenu.open .submenu {
+    max-height: 500px;
+}
+
+.sidebar-nav .submenu li a {
+    display: block;
+    padding: 0.6rem 1.2rem 0.6rem 2.2rem;
+    color: rgba(209, 213, 219, 0.9);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.sidebar-nav .submenu li a:hover,
+.sidebar-nav .submenu li a.active {
+    color: var(--primary-color);
+    background: rgba(245, 158, 11, 0.1);
+    border-left-color: var(--primary-color);
+    padding-left: 2.8rem;
 }
 
 .sidebar-footer {
@@ -93,6 +132,38 @@ body {
     font-size: 0.85rem;
     color: rgba(209, 213, 219, 0.7);
     text-align: center;
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
+    background: var(--primary-color);
+    border: none;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    background: #fbbf24;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
 }
 
 /* Main Content */
@@ -275,6 +346,20 @@ section > .container > p {
     gap: 2.5rem;
 }
 
+.service-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    opacity: 0.9;
+}
+
 .service-card {
     background: var(--card-bg);
     padding: 2rem;
@@ -296,6 +381,13 @@ section > .container > p {
 }
 
 .service-card h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.service-card h4 {
     font-size: 1rem;
     margin-bottom: 1rem;
     color: var(--primary-color);
@@ -560,13 +652,40 @@ footer {
 
 /* Tablet (481px - 768px) */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar-header {
+        padding: 2rem 1.5rem 2rem 4.5rem;
+    }
+
     .sidebar {
-        width: 180px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .menu-overlay.active {
+        display: block;
     }
 
     .main-content {
-        margin-left: 180px;
-        width: calc(100% - 180px);
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 180px;
     }
 
     .hero {
@@ -637,17 +756,44 @@ footer {
 
 /* Small phones (321px - 480px) */
 @media (max-width: 480px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar-header {
+        padding: 2rem 1.5rem 2rem 4.5rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
     body {
         font-size: 13px;
     }
 
     .sidebar {
-        width: 130px;
-    }
-
-    .main-content {
-        margin-left: 130px;
-        width: calc(100% - 130px);
+        width: 250px;
     }
 
     .container {
@@ -780,17 +926,44 @@ footer {
 
 /* Extra small phones (max 320px) */
 @media (max-width: 320px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar-header {
+        padding: 2rem 1.5rem 2rem 4.5rem;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 250px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
     body {
         font-size: 12px;
     }
 
     .sidebar {
-        width: 110px;
-    }
-
-    .main-content {
-        margin-left: 110px;
-        width: calc(100% - 110px);
+        width: 250px;
     }
 
     .hero {

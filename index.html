@@ -21,15 +21,30 @@
     </script>
 </head>
 <body>
+    <!-- Hamburger Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle">☰</button>
+    <div class="menu-overlay" id="menuOverlay"></div>
+
     <!-- Sidebar Navigation -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h2 class="logo">IK Strategic Services</h2>
+            <img src="res/images/logo.svg" alt="IK Strategic Services" class="logo">
         </div>
         <nav class="sidebar-nav">
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
+                <li class="has-submenu" id="servicesMenu">
+                    <a href="services.html">Services</a>
+                    <ul class="submenu">
+                        <li><a href="services.html#ai-innovation">AI & Innovation</a></li>
+                        <li><a href="services.html#cloud-infrastructure">Cloud & Infrastructure</a></li>
+                        <li><a href="services.html#development-integration">Development & Integration</a></li>
+                        <li><a href="services.html#security-compliance">Security & Compliance</a></li>
+                        <li><a href="services.html#managed-services">Managed Services</a></li>
+                        <li><a href="services.html#digital-transformation">Digital Transformation</a></li>
+                        <li><a href="services.html#strategic-consulting">Strategic Consulting</a></li>
+                    </ul>
+                </li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -87,5 +102,44 @@
             </div>
         </footer>
     </main>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        });
+
+        menuOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            menuOverlay.classList.remove('active');
+        });
+
+        // Close menu when a link is clicked
+        const sidebarLinks = sidebar.querySelectorAll('a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                menuOverlay.classList.remove('active');
+            });
+        });
+
+        // Services submenu toggle
+        const servicesMenu = document.getElementById('servicesMenu');
+        if (servicesMenu) {
+            const servicesLink = servicesMenu.querySelector('a:first-child');
+            servicesLink.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    servicesMenu.classList.toggle('open');
+                    servicesLink.classList.toggle('submenu-open');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
