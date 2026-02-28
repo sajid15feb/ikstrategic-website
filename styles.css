@@ -503,6 +503,30 @@ footer {
 }
 
 /* Responsive Design */
+/* Large screens (1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
+/* Medium screens (769px - 1199px) */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Tablet (481px - 768px) */
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;
@@ -513,12 +537,17 @@ footer {
         width: calc(100% - 200px);
     }
 
+    .hero {
+        min-height: 50vh;
+        padding: 60px 1.5rem;
+    }
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .cta-buttons {
@@ -529,8 +558,12 @@ footer {
         width: 100%;
     }
 
+    section {
+        padding: 60px 1.5rem;
+    }
+
     section h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .about-intro {
@@ -539,46 +572,155 @@ footer {
 
     .sidebar-nav a {
         font-size: 0.9rem;
-        padding: 0.8rem 1.2rem;
+        padding: 0.7rem 1rem;
+    }
+
+    .highlight-cards {
+        gap: 1.5rem;
+    }
+
+    .services-grid {
+        gap: 1.5rem;
     }
 }
 
-@media (max-width: 600px) {
+/* Small phones (321px - 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 13px;
+    }
+
     .sidebar {
-        width: 180px;
+        width: 160px;
     }
 
     .main-content {
-        margin-left: 180px;
-        width: calc(100% - 180px);
+        margin-left: 160px;
+        width: calc(100% - 160px);
     }
 
     .hero {
-        padding: 50px 1rem;
+        min-height: 45vh;
+        padding: 40px 1rem;
     }
 
     .hero h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .cta-button {
+        padding: 8px 20px;
+        font-size: 0.9rem;
     }
 
     section {
-        padding: 50px 1rem;
+        padding: 40px 1rem;
     }
 
     section h2 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+
+    section > .container > p {
+        font-size: 0.9rem;
     }
 
     .logo {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .sidebar-header {
-        padding: 1.5rem 1rem;
+        padding: 1.2rem 0.8rem;
     }
 
     .sidebar-footer {
-        font-size: 0.75rem;
-        padding: 1rem;
+        font-size: 0.7rem;
+        padding: 0.8rem;
+    }
+
+    .sidebar-nav a {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .card h3 {
+        font-size: 0.95rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+    }
+
+    .highlight-cards {
+        gap: 1rem;
+    }
+
+    .services-grid {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Extra small phones (max 320px) */
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+
+    .sidebar {
+        width: 140px;
+    }
+
+    .main-content {
+        margin-left: 140px;
+        width: calc(100% - 140px);
+    }
+
+    .hero h1 {
+        font-size: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        font-size: 0.95rem;
+    }
+
+    .cta-button {
+        padding: 7px 16px;
+        font-size: 0.85rem;
+    }
+
+    section h2 {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding: 30px 0.8rem;
     }
 }
