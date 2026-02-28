@@ -112,17 +112,31 @@ body {
 }
 
 /* Hero Section */
-.hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.8rem;
-    font-weight: 700;
+.hero {
+    background: linear-gradient(135deg, var(--dark-color) 0%, var(--secondary-dark) 100%);
+    color: white;
+    border-bottom: 3px solid var(--primary-color);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 2rem;
 }
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: white;
+}
+
 .hero p {
-    font-size: 0.95rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 300;
 }
+
 .hero-content {
     animation: slideDown 0.8s ease-out;
     text-align: center;
