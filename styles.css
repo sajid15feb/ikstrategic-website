@@ -5,12 +5,14 @@
 }
 
 :root {
-    --primary-color: #4a9eff;
-    --dark-color: #1a1a1a;
-    --secondary-dark: #2d2d2d;
-    --light-bg: #f9f9f9;
-    --text-color: #333;
-    --text-light: #666;
+    --primary-color: #f59e0b;
+    --dark-color: #0f172a;
+    --secondary-dark: #1a2332;
+    --light-bg: #111827;
+    --text-color: #f3f4f6;
+    --text-light: #d1d5db;
+    --card-bg: #1a2332;
+    --border-gold: #d97706;
 }
 
 body {
@@ -38,7 +40,7 @@ body {
 
 .sidebar-header {
     padding: 2rem 1.5rem;
-    border-bottom: 2px solid rgba(74, 158, 255, 0.2);
+    border-bottom: 2px solid rgba(245, 158, 11, 0.25);
 }
 
 .logo {
@@ -76,7 +78,7 @@ body {
 
 .sidebar-nav a:hover,
 .sidebar-nav a.active {
-    background: rgba(74, 158, 255, 0.1);
+    background: rgba(245, 158, 11, 0.1);
     color: var(--primary-color);
     border-left-color: var(--primary-color);
     padding-left: 1.8rem;
@@ -87,9 +89,9 @@ body {
     bottom: 0;
     width: 100%;
     padding: 1.5rem;
-    border-top: 1px solid rgba(74, 158, 255, 0.2);
+    border-top: 1px solid rgba(245, 158, 11, 0.25);
     font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(209, 213, 219, 0.7);
     text-align: center;
 }
 
@@ -123,6 +125,7 @@ body {
 }
 .hero-content {
     animation: slideDown 0.8s ease-out;
+    text-align: center;
 }
 
 .hero h1 {
@@ -186,7 +189,7 @@ body {
 }
 
 .welcome {
-    background: white;
+    background: var(--light-bg);
 }
 
 .services {
@@ -194,7 +197,7 @@ body {
 }
 
 .about {
-    background: white;
+    background: var(--light-bg);
 }
 
 .team {
@@ -204,7 +207,7 @@ body {
 section h2 {
     font-size: 1.6rem;
     margin-bottom: 2rem;
-    color: var(--dark-color);
+    color: var(--primary-color);
     font-weight: 700;
     text-align: center;
 }
@@ -225,23 +228,23 @@ section > .container > p {
 }
 
 .card {
-    background: white;
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
-    border-top: 4px solid var(--primary-color);
+    border-left: 4px solid var(--primary-color);
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
 }
 
 .card h3 {
     font-size: 1rem;
     margin-bottom: 0.8rem;
-    color: var(--dark-color);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
@@ -259,17 +262,18 @@ section > .container > p {
 }
 
 .service-card {
-    background: white;
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 8px;
     text-align: center;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    border-top: 4px solid var(--primary-color);
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
 }
 
 .service-icon {
@@ -280,7 +284,7 @@ section > .container > p {
 .service-card h3 {
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: var(--dark-color);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
@@ -302,7 +306,7 @@ section > .container > p {
 .about-intro h3 {
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
-    color: var(--dark-color);
+    color: var(--primary-color);
     font-weight: 600;
 }
 
@@ -337,17 +341,17 @@ section > .container > p {
 }
 
 .team-member {
-    background: white;
+    background: var(--card-bg);
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
 }
 
 .team-member:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 20px rgba(245, 158, 11, 0.3);
 }
 
 .team-member-avatar {
@@ -367,7 +371,7 @@ section > .container > p {
 .team-member h4 {
     font-size: 1rem;
     margin-bottom: 0.4rem;
-    color: var(--dark-color);
+    color: var(--text-color);
     font-weight: 600;
 }
 
@@ -399,7 +403,7 @@ section > .container > p {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--dark-color);
+    color: var(--text-color);
     font-weight: 500;
 }
 
@@ -407,18 +411,20 @@ section > .container > p {
 .form-group textarea {
     width: 100%;
     padding: 0.65rem;
-    border: 1px solid #ddd;
+    border: 1px solid #3a4556;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
     font-size: 0.92rem;
     transition: border-color 0.2s ease;
+    background: #1a2332;
+    color: var(--text-color);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
 }
 
 .form-group textarea {
@@ -428,7 +434,7 @@ section > .container > p {
 
 .form-group button {
     background: var(--primary-color);
-    color: white;
+    color: var(--dark-color);
     padding: 10px 24px;
     border: none;
     border-radius: 5px;
@@ -441,17 +447,18 @@ section > .container > p {
 }
 
 .form-group button:hover {
-    background: var(--dark-color);
+    background: #fbbf24;
     transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
     background: var(--dark-color);
-    color: white;
+    color: var(--text-light);
     padding: 2rem;
     text-align: center;
     margin-top: auto;
+    border-top: 2px solid var(--primary-color);
 }
 
 .footer-content p {
@@ -579,6 +586,7 @@ footer {
     section h2 {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
+        text-align: center;
     }
 
     section > .container > p {
@@ -659,6 +667,7 @@ footer {
     section h2 {
         font-size: 1.3rem;
         margin-bottom: 1.2rem;
+        text-align: center;
     }
 
     section > .container > p {
@@ -797,6 +806,7 @@ footer {
     section h2 {
         font-size: 1.2rem;
         margin-bottom: 1rem;
+        text-align: center;
     }
 
     section {
