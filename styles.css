@@ -181,7 +181,7 @@ body {
 .services,
 .about,
 .team {
-    padding: 80px 2rem;
+    padding: 60px 2rem;
     flex-grow: 1;
 }
 
@@ -203,7 +203,7 @@ body {
 
 section h2 {
     font-size: 1.6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: var(--dark-color);
     font-weight: 700;
 }
@@ -211,7 +211,7 @@ section h2 {
 section > .container > p {
     font-size: 0.95rem;
     color: var(--text-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     line-height: 1.6;
 }
 
@@ -219,7 +219,7 @@ section > .container > p {
 .highlight-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     margin-top: 2rem;
 }
 
@@ -239,7 +239,7 @@ section > .container > p {
 
 .card h3 {
     font-size: 1rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
     color: var(--dark-color);
     font-weight: 600;
 }
@@ -247,13 +247,14 @@ section > .container > p {
 .card p {
     color: var(--text-light);
     font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 /* Services Grid */
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .service-card {
@@ -272,12 +273,12 @@ section > .container > p {
 
 .service-icon {
     font-size: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .service-card h3 {
     font-size: 1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     color: var(--dark-color);
     font-weight: 600;
 }
@@ -285,6 +286,7 @@ section > .container > p {
 .service-card p {
     color: var(--text-light);
     font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 /* About Page Content */
@@ -524,34 +526,45 @@ footer {
     section h2 {
         font-size: 1.8rem;
     }
+
+    .highlight-cards {
+        gap: 2rem;
+    }
+
+    .services-grid {
+        gap: 2rem;
+    }
 }
 
 /* Tablet (481px - 768px) */
 @media (max-width: 768px) {
     .sidebar {
-        width: 200px;
+        width: 180px;
     }
 
     .main-content {
-        margin-left: 200px;
-        width: calc(100% - 200px);
+        margin-left: 180px;
+        width: calc(100% - 180px);
     }
 
     .hero {
         min-height: 50vh;
-        padding: 60px 1.5rem;
+        padding: 50px 1.2rem;
     }
 
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
     }
 
     .hero p {
         font-size: 0.9rem;
+        margin-bottom: 1.2rem;
     }
 
     .cta-buttons {
         flex-direction: column;
+        gap: 0.8rem;
     }
 
     .cta-button {
@@ -559,15 +572,22 @@ footer {
     }
 
     section {
-        padding: 60px 1.5rem;
+        padding: 50px 1.2rem;
     }
 
     section h2 {
         font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section > .container > p {
+        font-size: 0.92rem;
+        margin-bottom: 1.5rem;
     }
 
     .about-intro {
         grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .sidebar-nav a {
@@ -582,6 +602,14 @@ footer {
     .services-grid {
         gap: 1.5rem;
     }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
 }
 
 /* Small phones (321px - 480px) */
@@ -591,22 +619,26 @@ footer {
     }
 
     .sidebar {
-        width: 160px;
+        width: 130px;
     }
 
     .main-content {
-        margin-left: 160px;
-        width: calc(100% - 160px);
+        margin-left: 130px;
+        width: calc(100% - 130px);
+    }
+
+    .container {
+        padding: 0 1rem;
     }
 
     .hero {
         min-height: 45vh;
-        padding: 40px 1rem;
+        padding: 35px 0.8rem;
     }
 
     .hero h1 {
         font-size: 1.4rem;
-        margin-bottom: 0.6rem;
+        margin-bottom: 0.7rem;
     }
 
     .hero p {
@@ -615,63 +647,46 @@ footer {
     }
 
     .cta-button {
-        padding: 8px 20px;
-        font-size: 0.9rem;
+        padding: 9px 22px;
+        font-size: 0.92rem;
     }
 
     section {
-        padding: 40px 1rem;
+        padding: 35px 0.8rem;
     }
 
     section h2 {
         font-size: 1.3rem;
-        margin-bottom: 0.8rem;
+        margin-bottom: 1.2rem;
     }
 
     section > .container > p {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.5;
     }
 
     .logo {
-        font-size: 1rem;
-    }
-
-    .sidebar-header {
-        padding: 1.2rem 0.8rem;
-    }
-
-    .sidebar-footer {
-        font-size: 0.7rem;
-        padding: 0.8rem;
-    }
-
-    .sidebar-nav a {
-        font-size: 0.85rem;
-        padding: 0.6rem 0.8rem;
-    }
-
-    .card {
-        padding: 1.5rem;
-    }
-
-    .card h3 {
         font-size: 0.95rem;
     }
 
-    .card p {
-        font-size: 0.85rem;
+    .sidebar-header {
+        padding: 1rem 0.7rem;
     }
 
-    .service-card {
-        padding: 1.5rem;
+    .sidebar-footer {
+        font-size: 0.65rem;
+        padding: 0.7rem;
     }
 
-    .service-icon {
-        font-size: 2.5rem;
+    .sidebar-nav a {
+        font-size: 0.82rem;
+        padding: 0.6rem 0.7rem;
     }
 
     .highlight-cards {
         gap: 1rem;
+        grid-template-columns: 1fr;
     }
 
     .services-grid {
@@ -682,6 +697,61 @@ footer {
     .team-grid {
         grid-template-columns: 1fr;
     }
+
+    .card {
+        padding: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .card p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .service-card {
+        padding: 1.2rem;
+    }
+
+    .service-icon {
+        font-size: 2.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .service-card p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .about-intro h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .about-intro p {
+        font-size: 0.88rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .about-list li {
+        padding: 0.6rem 0;
+        font-size: 0.85rem;
+        padding-left: 1.5rem;
+    }
 }
 
 /* Extra small phones (max 320px) */
@@ -691,36 +761,69 @@ footer {
     }
 
     .sidebar {
-        width: 140px;
+        width: 110px;
     }
 
     .main-content {
-        margin-left: 140px;
-        width: calc(100% - 140px);
+        margin-left: 110px;
+        width: calc(100% - 110px);
+    }
+
+    .hero {
+        min-height: 40vh;
+        padding: 30px 0.6rem;
     }
 
     .hero h1 {
         font-size: 1.2rem;
+        margin-bottom: 0.6rem;
     }
 
     .hero p {
         font-size: 0.8rem;
+        margin-bottom: 0.8rem;
     }
 
     .logo {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .cta-button {
-        padding: 7px 16px;
+        padding: 8px 18px;
         font-size: 0.85rem;
     }
 
     section h2 {
         font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 
     section {
-        padding: 30px 0.8rem;
+        padding: 30px 0.6rem;
+    }
+
+    .sidebar-nav a {
+        font-size: 0.78rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .highlight-cards {
+        gap: 0.8rem;
+    }
+
+    .services-grid {
+        gap: 0.8rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .card h3 {
+        font-size: 0.9rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
     }
 }
